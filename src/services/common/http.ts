@@ -1,6 +1,6 @@
 import { Post } from "../../interface/post";
 
-export const API_URL = "http://localhost:3000/posts";
+export const API_URL = "http://localhost:3005/posts";
 
 interface DefaultHeaders {
 	[key: string]: string;
