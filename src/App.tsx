@@ -48,7 +48,7 @@ function App() {
           </p>
         )}
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 grid-rows-2 sm:grid-cols-2 lg:grid-cols-3 gap-8">
           {posts.map((post) => (
             <div key={post.id} className="bg-white shadow-md rounded-md p-4">
               <h2 className="text-lg font-semibold mb-2">{post.title}</h2>
@@ -67,6 +67,7 @@ function App() {
           </button>
           <button
             onClick={nextPage}
+            disabled={posts.length === 0}
             className="bg-blue-500 text-white font-semibold px-4 py-2 rounded disabled:bg-gray-300"
           >
             Next
