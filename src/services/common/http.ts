@@ -6,6 +6,7 @@ interface DefaultHeaders {
 	[key: string]: string;
 }
 
+
 // Encabezados por defecto
 const defaultHeaders: DefaultHeaders = {
 	"Content-Type": "application/json",
@@ -60,14 +61,14 @@ export const httpPost = async (
 	endpoint: string,
 	body: Post,
 	options: {headers?: DefaultHeaders} = {}
-): Promise<Post[]> => {
+): Promise<Post> => {
 	const response = await fetch(endpoint, {
 		method: "POST",
 		headers: {...defaultHeaders, ...options.headers},
 		body: JSON.stringify(body),
 	});
 
-	return handleResponse(response);
+	return response.json();
 };
 
 // Método Siguiente (Paginación)
