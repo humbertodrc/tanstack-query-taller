@@ -54,7 +54,7 @@ function App() {
     const response = await createPost(newPost);
 
     if (response) {
-      setPosts([response, ...posts]);
+      setPosts([...posts, response]);
     }
 
   };
